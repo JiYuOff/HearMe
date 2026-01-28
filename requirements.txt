@@ -1,0 +1,16 @@
+PyQt6==6.6.1
+PyQt6-Qt6==6.6.1
+PyQt6-sip==13.6.0
+PyAudio==0.2.14
+vosk==0.3.45
+argostranslate==1.8.0
+argostranslate-lang-en==1.8.0
+argostranslate-lanf-ru=1.8.0
+numpy==1.26.2
+requests==2.31.0
+certifi==2023.11.17
+charset-normolizer==3.3.2
+idna==3.6
+urllib3==2.1.0
+librosa==0.10.1
+soundfile==0.12.1
