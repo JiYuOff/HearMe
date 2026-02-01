@@ -1,6 +1,6 @@
-faster-whisper==0.10.0
-argostranslate==1.9.1
-SpeechRecognition==3.10.1
+faster-whisper==1.2.1
+argostranslate==1.10.0
+SpeechRecognition==3.14.5
 PyAudio==0.2.14
-gpiozero==2.0
-numpy
+gpiozero==2.0.1
+numpy==2.4.1
