@@ -3,7 +3,7 @@
 Устройство для глухих и слабослышащих, распознающее человеческую речь и переводящее её, для помощи в общении. 
 
 # Компоненты
-Для данного устройства я использовал и рекомендую такие компоненты:
+Для данного устройства я использовал и рекомендую такие компоненты(* - количество):
 ```
 Raspberry pi 5
 Охлаждение для Raspberry pi 5
@@ -17,4 +17,17 @@ Geekworm x1201
 
 # Установка обеспечения
 Разархивируйте данный репозиторий. Введите следующие команды в bash. 
-`test`
+```
+sudo apt update
+sudo apt install python3-pip python3-venv portaudio19-dev python3-tk libatlas-base-dev
+```
+```
+mkdir rpi_translator
+cd rpi_translator
+python3 -m venv venv
+source venv/bin/activate
+```
+Используйте файл requirements.txt в созданной нами среде.
+```
+pip install -r requirements.txt
+```
