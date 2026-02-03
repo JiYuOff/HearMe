@@ -46,3 +46,4 @@ pip install -r requirements.txt
 ```
 python3 hearme.py
 ```
+README.md в процессе написания
