@@ -15,8 +15,19 @@ Geekworm x1201
 Корпус, напечатанный на 3d принтере
 ```
 Можете найти все ссылки на них в файле source.txt на aliexpress.
+Также список всех библиотек и моделей для устройства:
+```
+tkinter
+queue
+threading
+time
+argostranslate
+speech_recognition
+faster_whisper
+gpiozero
+```
 # Установка обеспечения
-Разархивируйте данный репозиторий. Введите следующие команды в bash. 
+Разархивируйте данный репозиторий. Введите следующие команды в bash(для первого запуска необходимо соединение Wi-Fi для скачивания всех файлов):
 ```
 sudo apt update
 sudo apt install python3-pip python3-venv portaudio19-dev python3-tk libatlas-base-dev
