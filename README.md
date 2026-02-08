@@ -30,13 +30,13 @@ argostranslate
 gpiozero
 ```
 # Установка ПО
-Всё устройство работает на ОС "Raspberry Pi OS(64-bit)". Также необходимо установить на флешку соедующие файлы: 
+Всё устройство работает на ОС "Raspberry Pi OS(64-bit)". Также необходимо установить на флешку соедующие файлы:
 Модели распознавания (Vosk):
-vosk-model-small-ru-0.22.zip(https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip)
-vosk-model-small-en-us-0.15.zip(https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip)
+`vosk-model-small-ru-0.22.zip(https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip)`
+`vosk-model-small-en-us-0.15.zip(https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip)`
 Модели перевода (Argos Translate):
-translate-ru_en-1_9.argosmodel(https://data.argosopentech.com/translate-ru_en-1_9.argosmodel)
-translate-en_ru-1_9.argosmodel(https://data.argosopentech.com/translate-en_ru-1_9.argosmodel)
+`translate-ru_en-1_9.argosmodel(https://data.argosopentech.com/translate-ru_en-1_9.argosmodel)`
+`translate-en_ru-1_9.argosmodel(https://data.argosopentech.com/translate-en_ru-1_9.argosmodel)`
 
 Вставьте флшеку в Raspberry Pi 5. Настройте файл конфига. Введите команду в терминал:
 ```
