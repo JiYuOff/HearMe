@@ -30,13 +30,14 @@ argostranslate
 gpiozero
 ```
 # Установка ПО
+**В начале кода `hearme.py` и местах, где написано YOUR_USERNAME, не забудьте поменять ваш username!!!**
 Всё устройство работает на ОС "Raspberry Pi OS(64-bit)". Также необходимо установить на флешку соедующие файлы:
 Модели распознавания (Vosk):
-`vosk-model-small-ru-0.22.zip(https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip)`
-`vosk-model-small-en-us-0.15.zip(https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip)`
+⋅⋅⋅`vosk-model-small-ru-0.22.zip(https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip)`
+⋅⋅⋅`vosk-model-small-en-us-0.15.zip(https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip)`
 Модели перевода (Argos Translate):
-`translate-ru_en-1_9.argosmodel(https://data.argosopentech.com/translate-ru_en-1_9.argosmodel)`
-`translate-en_ru-1_9.argosmodel(https://data.argosopentech.com/translate-en_ru-1_9.argosmodel)`
+⋅⋅⋅`translate-ru_en-1_9.argosmodel(https://data.argosopentech.com/translate-ru_en-1_9.argosmodel)`
+⋅⋅⋅`translate-en_ru-1_9.argosmodel(https://data.argosopentech.com/translate-en_ru-1_9.argosmodel)`
 
 Вставьте флшеку в Raspberry Pi 5. Настройте файл конфига. Введите команду в терминал:
 ```
@@ -79,8 +80,8 @@ mv ~/HearMe/vosk-model-small-en-us-0.15 ~/HearMe/model_en
 ```
 ```
 python3 -c "import argostranslate.package; \
-argostranslate.package.install_from_path('/media/YOUR_USER_NAME/YOUR_NAME_USB/translate-ru_en-1_9.argosmodel'); \
-argostranslate.package.install_from_path('/media/YOUR_USER_NAME/YOUR_NAME_USB/translate-en_ru-1_9.argosmodel')"
+argostranslate.package.install_from_path('/media/YOUR_USERNAME/YOUR_NAME_USB/translate-ru_en-1_9.argosmodel'); \
+argostranslate.package.install_from_path('/media/YOUR_USERNAME/YOUR_NAME_USB/translate-en_ru-1_9.argosmodel')"
 ```
 Остаётся запустить наш проект:
 ```
@@ -88,13 +89,20 @@ cd ~/HearMe
 source venv/bin/activate
 python hearme.py
 ```
-Также рекомендую поставить файл на автозагрузку, чтобы не запускать его каждый раз самостоятельно:
+Также рекомендую поставить файл на автозагрузку, чтобы не запускать его каждый раз самостоятельно. Разрешаем запускать программу без ввода пароля, для этого входим в файл:
 ```
-chmod +x ~/HearMe/start.sh
+sudo visudo
 ```
-Создаём кофигурационный файл:
+Добавляем следующую строку в конец:
+```
+YOUR_USERNAME ALL=(ALL) NOPASSWD: /home/YOUR_USERNAME/HearMe/venv/bin/python
+```
+Создаём кофигурационный файл автозапуска:
 ```
 mkdir -p ~/.config/autostart
+```
+Создаём файл ярлыка приложения:
+```
 nano ~/.config/autostart/hearme.desktop
 ```
 Вставьте в него следующие строки:
@@ -102,8 +110,8 @@ nano ~/.config/autostart/hearme.desktop
 [Desktop Entry]
 Type=Application
 Name=HearMe
-Comment=Start HearMe Translator on Boot
-Exec=/home/shannyo/HearMe/start.sh
+Comment=Speech Translation System
+Exec=sudo /home/YOUR_USERNAME/HearMe/venv/bin/python /home/YOUR_USERNAME/HearMe/hearme.py
 Terminal=false
 X-GNOME-Autostart-enabled=true
 ```
